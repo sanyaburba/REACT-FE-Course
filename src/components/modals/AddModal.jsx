@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import styles from './modals.module.scss'
 import MyInput from "../MyInput/MyInput";
 import {movies} from "./data";
 import { default as ReactSelect } from "react-select";
 import { components } from "react-select";
+import {moviesAPI} from "../../services/MoviesService";
 
 const Option = (props) => {
     return (
@@ -27,15 +28,27 @@ const customStyles = {
     }),
 }
 
-const AddModal = () => {
-    return (
-        <div id="AddModal" className={styles.modal}>
+const AddModal = ({active, setActive}) => {
 
-            <div className={styles.modalContent}>
-                <span className={styles.close}>&times;</span>
+    const closeModal = useCallback(()=> setActive(false), [setActive]);
+    const notCloseOnContent = useCallback((e)=> e.stopPropagation(), []);
+
+    const [createMovie, {}] = moviesAPI.useCreateMovieMutation({});
+
+    const handleCreateMovie = useCallback(async (e) => {
+        e.preventDefault();
+        const movieData = prompt('')
+        await createMovie({movieData, body: movieData});
+    }, [closeModal, createMovie])
+
+    return (
+        <div id="AddModal" className={active ? styles.modal : styles.hideModal} onClick={closeModal}>
+
+            <div className={styles.modalContent} onClick={notCloseOnContent}>
+                <span className={styles.close} onClick={closeModal}>&times;</span>
                 <div className={styles.modalBody}>
                     <h1 className={styles.heading}>ADD movie</h1>
-                    <form className={styles.row}>
+                    <form className={styles.row} onSubmit={handleCreateMovie}>
                         <MyInput title="title" placeholder="Your Title"/>
                         <MyInput title="release date" type="date" placeholder="Select Date" />
                         <MyInput title="movie url" placeholder="Movie URL here"/>
@@ -61,9 +74,6 @@ const AddModal = () => {
                         </div>
                     </form>
                 </div>
-                {/*<div className={styles.modalFooter}>*/}
-                {/*    <h3>Modal Footer</h3>*/}
-                {/*</div>*/}
             </div>
 
         </div>

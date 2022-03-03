@@ -12,12 +12,10 @@ code {
     monospace;
 }
 
-#AddModal {
-    display: none;
-}
+
 #DeleteModal {
     display: none;
 }
 #EditModal {
-    display: block;
+    display: none;
 }

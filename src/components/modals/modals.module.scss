@@ -1,5 +1,5 @@
 .modal {
-  //display: none; /* Hidden by default */
+  display: block; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
@@ -12,6 +12,11 @@
   background-color: rgb(0,0,0); /* Fallback color */
   backdrop-filter: blur(7px);
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  //transition: 0.5s;
+}
+
+.hideModal {
+  display: none;
 }
 .titleHeading {
   text-transform: uppercase;

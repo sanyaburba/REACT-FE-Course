@@ -1,0 +1,36 @@
+.movie_card {
+  height: 45rem;
+  width: 100%;
+  //margin-bottom: 2rem;
+}
+.image {
+  height: 40rem;
+  width: 100%;
+  object-fit: fill;
+}
+.movie_row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+}
+
+.movie_title {
+  font-size: 1.5rem;
+  color: white
+}
+
+.movie_date {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white
+}
+
+.movie_genre {
+  font-size: 0.9rem;
+  color: #cbcbcb
+}

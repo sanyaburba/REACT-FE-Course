@@ -6,10 +6,10 @@ const ResultSort = () => {
         <div className={styles.movie_sort}>
             <h1>sort by</h1>
             <select name="sorting" id="">
-                <option value="releaseDate" selected>release date</option>
-                <option value="movie">movie</option>
-                <option value="mother">mother</option>
-                <option value="brother">brother</option>
+                <option defaultValue="releaseDate">release date</option>
+                <option defaultValue="movie">movie</option>
+                <option defaultValue="mother">mother</option>
+                <option defaultValue="brother">brother</option>
             </select>
         </div>
     );
