@@ -1,10 +1,10 @@
 export const movies = [
-    { value: "crime", label: "Crime" },
-    { value: "documentary", label: "Documentary" },
-    { value: "horror", label: "Horror" },
-    { value: "comedy", label: "Comedy" },
-    { value: "detective", label: "Detective" },
-    { value: "thriller", label: "Thriller" },
-    { value: "drama", label: "Drama" },
-    { value: "fantasy", label: "Fantasy" }
+    {id: 1, value: "crime", label: "Crime"},
+    {id: 2, value: "documentary", label: "Documentary"},
+    {id: 3, value: "horror", label: "Horror"},
+    {id: 4, value: "comedy", label: "Comedy"},
+    {id: 5, value: "detective", label: "Detective"},
+    {id: 6, value: "thriller", label: "Thriller"},
+    {id: 7, value: "drama", label: "Drama"},
+    {id: 8, value: "fantasy", label: "Fantasy"}
 ];

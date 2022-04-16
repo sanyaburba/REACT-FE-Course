@@ -1,0 +1,103 @@
+.movie_card {
+  height: 45rem;
+  width: 100%;
+  //margin-bottom: 2rem;
+}
+.image {
+  height: 38rem;
+  width: 100%;
+  object-fit: fill;
+  position: relative;
+}
+.movie_row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+}
+
+.movie_title {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+.buttonHover {
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 2%;
+  right: 5%;
+  height: 3rem;
+  width: 3rem;
+  display: none;
+  background: #424242;
+  border: 1px solid inherit;
+  border-radius: 50%;
+  transition: 0.5s all ease;
+}
+
+.relative_block {
+  position: relative;
+  height: 40rem;
+  &:hover .buttonHover {
+    display: block;
+  }
+}
+.movie_date {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white
+}
+
+.movie_genre {
+  font-size: 0.9rem;
+  color: #cbcbcb
+}
+
+.popUp {
+  display: block;
+  position: absolute;
+  top: 2%;
+  right: 4%;
+  background: #232323;
+  z-index: 2;
+  width: 12rem;
+  min-height: 7rem;
+}
+.modalContent {
+  display: flex;
+  flex-direction: column;
+}
+.close {
+  color: white;
+  cursor: pointer;
+  //float: right;
+  align-self: flex-end;
+  font-size: 1.7rem;
+  font-weight: 300;
+  margin: 0 5px 0 0;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  //justify-content: flex-start;
+  width: 100%;
+  color: white
+}
+.popUpButton {
+  color: white;
+  width: 100%;
+  padding: .5rem 1.5rem;
+  background-color: inherit;
+  font-size: 1.3rem;
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: .7rem;
+  &:hover {
+    background-color: #F65261;
+  }
+}

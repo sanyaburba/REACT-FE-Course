@@ -1,27 +1,48 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import styles from './modals.module.scss'
 import MyButton from "../MyButton/MyButton";
 
-const DeleteModal = () => {
-    return (
-        <div id="DeleteModal" className={styles.modal}>
+const DeleteModal = ({active, setActive, movie, handleRemove}) => {
 
-            <div className={styles.modalContent}>
-                <span className={styles.close}>&times;</span>
-                {/*<div className={styles.modalHeader}>*/}
-                {/*    <h2>Modal Header</h2>*/}
-                {/*</div>*/}
+    const closeModal = useCallback((e) => {
+        setActive(false)
+    }, [setActive]);
+
+    const notCloseOnContent = useCallback((e) => e.stopPropagation(), []);
+
+    const deleteMovie = useCallback((e) => {
+        e.stopPropagation()
+        handleRemove(movie)
+    }, [])
+
+    return (
+        <div
+            className={active ? styles.modal : styles.hideModal}
+            onClick={closeModal}
+        >
+            <div
+                className={styles.modalContent}
+                onClick={notCloseOnContent}
+            >
+                <span
+                    className={styles.close}
+                    onClick={closeModal}
+                >
+                    &times;
+                </span>
                 <div className={styles.modalBody}>
                     <h1 className={styles.heading}>Delete movie</h1>
                     <div className={styles.row}>
-                    <p className={styles.message}>Are you sure want to delete this movie?</p>
-                    {/*<MyButton value='confirm' className={styles.button}/>*/}
-                    <button className={styles.button}>confirm</button>
+                        <p className={styles.message}>Are you sure want to delete this movie?</p>
+                        {/*<MyButton value='confirm' className={styles.button}/>*/}
+                        <button
+                            className={styles.button}
+                            onClick={deleteMovie}
+                        >
+                            confirm
+                        </button>
                     </div>
                 </div>
-                {/*<div className={styles.modalFooter}>*/}
-                {/*    <h3>Modal Footer</h3>*/}
-                {/*</div>*/}
             </div>
 
         </div>

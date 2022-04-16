@@ -3,37 +3,50 @@ import Moviecard from "../Moviecard/Moviecard";
 import ResultFilter from "../Sorting/ResultFilter";
 import styles from './Main.module.scss'
 import ResultSort from "../Sorting/ResultSort";
-import MyInput from "../MyInput/MyInput";
-import DeleteModal from "../modals/DeleteModal";
-import AddModal from "../modals/AddModal";
-import EditModal from "../modals/EditModal";
+import {moviesAPI} from "../../services/MoviesService";
 
-const Main = () => {
+const Main = ({setPage, headRef, setMovieId}) => {
+
+    const {data: movies, error, isLoading} = moviesAPI.useFetchAllMoviesQuery(33)
+    console.log(movies)
+
+    const [deleteMovie, {}] = moviesAPI.useDeleteMovieMutation()
+
+
+    const handleDeleteMovie = (movie) => {
+        deleteMovie(movie)
+    }
+
     return (
         <main className={styles.content}>
             <div className={styles.sort}>
                 <div className={styles.sorting_row}>
-                    <ResultFilter />
-                    <ResultSort />
+                    <ResultFilter/>
+                    <ResultSort/>
                 </div>
-                <DeleteModal />
-                <AddModal />
-                <EditModal />
             </div>
-            <h2 className="movies__counter">39 finded</h2>
-            <div className="flex-group">
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-            </div>
+            {movies?.data?.length !== 0 ? <>
+                <h2 className={styles.moviesNumber}>
+                    <strong>
+                        {movies?.data.length}
+                    </strong>
+                    movies found
+                </h2>
+                <div className={styles.flex_group}>
+                    {isLoading && <h1>Loading movies...</h1>}
+                    {error && <h1>{error}</h1>}
+                    {movies && movies.data.map(movie => (<Moviecard
+                        handleRemove={handleDeleteMovie}
+                        headRef={headRef}
+                        setPage={setPage}
+                        movie={movie}
+                        setMovieId={setMovieId}
+                        key={movie.id}
+                    />))}
+                </div>
+            </> : <div className={styles.noMovie}>
+                <p className={styles.noMovieText}>No Movie Found</p>
+            </div>}
         </main>
     );
 };

@@ -1,9 +1,9 @@
-.modal {
+.background {
   display: block; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  padding-bottom: 100px; /* Location of the box */
+  padding-top: 200px; /* Location of the box */
+  padding-bottom: 200px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -15,9 +15,6 @@
   //transition: 0.5s;
 }
 
-.hideModal {
-  display: none;
-}
 .titleHeading {
   text-transform: uppercase;
   color: #F65261;
@@ -40,7 +37,7 @@
   margin-bottom: 2.5rem;
 }
 /* Modal Content */
-.modalContent {
+.content {
   position: relative;
   background-color: #232323;
   margin: auto;
@@ -51,7 +48,8 @@
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
+  padding: 4rem
 }
 .addContent {
   text-align: center;
@@ -137,13 +135,6 @@
   cursor: pointer;
 }
 
-//.modalHeader {
-//  padding: 2px 16px;
-//  background-color: #5cb85c;
-//  color: white;
-//}
-
-.modalBody {padding: 4rem }
 .message {
   color: #fff;
   font-size: 1.6rem;
@@ -156,21 +147,7 @@
   margin: 0;
 }
 
-//.modalFooter {
-//  padding: 2px 16px;
-//  background-color: #5cb85c;
-//  color: white;
-//}
-
-@media screen and (max-width: 1000px) {
-  .heading {
-    font-size: 2rem;
-  }
+.backImage {
+  background: url('./bg.jpeg') no-repeat center;
+  height: 150vh;
 }
-
-@media screen and (max-width: 800px) {
-  .heading {
-    font-size: 1rem;
-  }
-}
-
