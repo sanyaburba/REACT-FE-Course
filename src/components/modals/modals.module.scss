@@ -1,23 +1,27 @@
 .modal {
-  //display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  padding-bottom: 100px; /* Location of the box */
+  display: block;
+  position: fixed;
+  z-index: 2;
+  padding-top: 100px;
+  padding-bottom: 100px;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
   backdrop-filter: blur(7px);
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hideModal {
+  display: none;
 }
 .titleHeading {
   text-transform: uppercase;
   color: #F65261;
   font-size: 1.1rem;
-  margin: 10px 0;
+  margin: 30px 0 10px;
   align-self: flex-start;
 }
 .movieId {
@@ -34,7 +38,8 @@
   letter-spacing: 0.3rem;
   margin-bottom: 2.5rem;
 }
-/* Modal Content */
+
+
 .modalContent {
   position: relative;
   background-color: #232323;
@@ -47,6 +52,9 @@
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s
+}
+.addContent {
+  text-align: center;
 }
 .button {
   height: 3.5rem;
@@ -80,13 +88,59 @@
   display: flex;
   flex-direction: column;
 }
-
+.addRow {
+  margin: 0 auto;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.checkIcon {
+  margin: 0 auto 2rem ;
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F65261;
+  padding: .3rem;
+  border-radius: 50%;
+}
 .buttons {
   display: flex;
   justify-content: flex-end;
   margin-top: 4rem;
 }
-/* Add Animation */
+
+.close {
+  color: white;
+  float: right;
+  font-size: 3.3rem;
+  font-weight: 300;
+  margin: 10px 20px 0 0;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.modalBody {padding: 4rem }
+.message {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+}
+
+.addMessage {
+  color: #fff;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+
 @-webkit-keyframes animatetop {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
@@ -96,37 +150,15 @@
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
-
-/* The Close Button */
-.close {
-  color: white;
-  float: right;
-  font-size: 3.3rem;
-  font-weight: 300;
-  margin: 10px 20px 0 0;
+@media screen and (max-width: 1000px) {
+  .heading {
+    font-size: 2rem;
+  }
 }
 
-.close:hover,
-.close:focus {
-  text-decoration: none;
-  cursor: pointer;
+@media screen and (max-width: 800px) {
+  .heading {
+    font-size: 1rem;
+  }
 }
 
-//.modalHeader {
-//  padding: 2px 16px;
-//  background-color: #5cb85c;
-//  color: white;
-//}
-
-.modalBody {padding: 4rem }
-.message {
-  color: #fff;
-  font-size: 1.6rem;
-margin-bottom: 3rem;
-}
-
-//.modalFooter {
-//  padding: 2px 16px;
-//  background-color: #5cb85c;
-//  color: white;
-//}

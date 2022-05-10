@@ -1,0 +1,153 @@
+.background {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 200px; /* Location of the box */
+  padding-bottom: 200px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  backdrop-filter: blur(7px);
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  //transition: 0.5s;
+}
+
+.titleHeading {
+  text-transform: uppercase;
+  color: #F65261;
+  font-size: 1.1rem;
+  margin: 30px 0 10px;
+  align-self: flex-start;
+}
+.movieId {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+.heading{
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 200;
+  letter-spacing: 0.3rem;
+  margin-bottom: 2.5rem;
+}
+/* Modal Content */
+.content {
+  position: relative;
+  background-color: #232323;
+  margin: auto;
+  border: 1px solid #232323;
+  width: 43%;
+  min-height: 45%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  padding: 4rem
+}
+.addContent {
+  text-align: center;
+}
+.button {
+  height: 3.5rem;
+  display: flex;
+  width: 35%;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: #F65261;
+  border-radius: 3px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  align-self: flex-end;
+}
+.button2 {
+  height: 3.5rem;
+  display: flex;
+  width: 35%;
+  align-items: center;
+  justify-content: center;
+  color: #F65261;
+  border: 1px solid #F65261;
+  background: inherit;
+  border-radius: 3px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-right: 1rem;
+}
+.row {
+  display: flex;
+  flex-direction: column;
+}
+.addRow {
+  margin: 0 auto;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.checkIcon {
+  margin: 0 auto 2rem ;
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F65261;
+  padding: .3rem;
+  border-radius: 50%;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4rem;
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 3.3rem;
+  font-weight: 300;
+  margin: 10px 20px 0 0;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.message {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+}
+
+.addMessage {
+  color: #fff;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.backImage {
+  background: url('../../images/bg.jpeg') no-repeat center;
+  height: 150vh;
+}

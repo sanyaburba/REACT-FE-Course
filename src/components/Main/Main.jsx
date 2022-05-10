@@ -1,40 +1,80 @@
-import React from 'react';
-import Moviecard from "../Moviecard/Moviecard";
-import ResultFilter from "../Sorting/ResultFilter";
+import React, {useCallback, useEffect, useRef, useState} from 'react';
+import Moviecard from "../MovieCard/Moviecard";
+import ResultFilter from "../FilteringMovies/ResultFilter";
 import styles from './Main.module.scss'
-import ResultSort from "../Sorting/ResultSort";
-import MyInput from "../MyInput/MyInput";
-import DeleteModal from "../modals/DeleteModal";
-import AddModal from "../modals/AddModal";
-import EditModal from "../modals/EditModal";
+import ResultSort from "../SortingMovies/ResultSort";
+import {moviesAPI} from "../../services/MoviesService";
+import MovieDetails from "../MovieDetails/MovieDetails";
+import Head from "../Head/Head";
+import {useObserver} from "../Hooks/useObserver";
 
-const Main = () => {
+const Main = ({setPage, headRef, setMovieId, search, page, setSearch, movieId, setSuccessActive}) => {
+
+    const [filter, setFilter] = useState('');
+    const [limit, setLimit] = useState(12);
+    const [offset, setOffset] = useState(0);
+    const [sort, setSort] = useState('');
+    const [sortOrder, setSortOrder] = useState('desc');
+    const lastElement = useRef()
+
+
+    const {data: movies, error, isLoading} = moviesAPI.useFetchAllMoviesQuery({
+        filter,
+        search,
+        offset,
+        limit,
+        sort,
+        sortOrder
+    })
+    const [deleteMovie, {}] = moviesAPI.useDeleteMovieMutation()
+
+    useObserver(lastElement, limit < 4000, isLoading, () => {
+        setLimit(prevState => prevState + 12)
+    })
+
+    const handleDeleteMovie = (movie) => {
+        deleteMovie(movie)
+    }
+
+    console.log(movies)
+    console.log(search)
+
     return (
-        <main className={styles.content}>
-            <div className={styles.sort}>
-                <div className={styles.sorting_row}>
-                    <ResultFilter />
-                    <ResultSort />
+        <div>
+            {page === 'HEAD' && <Head setSearch={setSearch} search={search} setSuccessActive={setSuccessActive}/>}
+            {page === 'DETAILS' && <MovieDetails movieId={movieId} headRef={headRef} setPage={setPage}/>}
+            <main className={styles.content}>
+                <div className={styles.sort}>
+                    <div className={styles.sorting_row}>
+                        <ResultFilter setFilter={setFilter}/>
+                        <ResultSort sort={sort} setSort={setSort}/>
+                    </div>
                 </div>
-                <DeleteModal />
-                <AddModal />
-                <EditModal />
-            </div>
-            <h2 className="movies__counter">39 finded</h2>
-            <div className="flex-group">
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-                <Moviecard />
-            </div>
-        </main>
+                {movies?.data?.length ? <>
+                    <h2 className={styles.moviesNumber}>
+                        <strong style={{marginRight: '.5rem'}}>
+                            {movies?.totalAmount}
+                        </strong>
+                        movies found
+                    </h2>
+                    <div className={styles.flex_group}>
+                        {isLoading && <h1>Loading movies...</h1>}
+                        {error && <h1>{error}</h1>}
+                        {movies && movies.data.map(movie => (<Moviecard
+                            handleRemove={handleDeleteMovie}
+                            headRef={headRef}
+                            setPage={setPage}
+                            movie={movie}
+                            setMovieId={setMovieId}
+                            key={movie.id}
+                        />))}
+                    </div>
+                </> : <div className={styles.noMovie}>
+                    <p className={styles.noMovieText}>No Movie Found</p>
+                </div>}
+                <hr ref={lastElement}/>
+            </main>
+        </div>
     );
 };
 

@@ -1,0 +1,110 @@
+.header {
+  background: url("../../images/back.jpg");
+  min-height: 40rem;
+}
+:root {
+  --input-border: #8b8a8b;
+  --input-focus-h: 245;
+  --input-focus-s: 100%;
+  --input-focus-l: 42%;
+}
+
+.content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+img {
+  color: red;
+  height: 40px;
+}
+
+.finder {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem 0 2rem;
+}
+
+.finder_title {
+  font-size: 3em;
+  color: white;
+  text-transform: uppercase;
+  align-self: flex-start;
+  font-weight: 300;
+  margin-bottom: 3rem;
+
+}
+.title_row {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin: 2rem 0 1rem 0;
+
+}
+
+.title {
+  font-size: 4rem;
+  margin-right: 1.3rem;
+  font-weight: 300;
+}
+
+.rating {
+  color: green;
+  font-size: 2rem;
+}
+.rating_border {
+  height: 5rem;
+  width: 5rem;
+  border: 1px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.genre {
+  color: #c4bfbf;
+  font-size: 1.3rem;
+}
+
+.year_row {
+  display: flex;
+  color: #F65261;
+  align-items: center;
+  font-size: 1.9rem;
+  margin: 2.5rem 0;
+}
+.year {
+  margin-right: 2rem;
+}
+.description {
+  color: #c4bfbf;
+  font-size: 1.3rem;
+  max-width: 100%;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+}
+
+.details {
+  width: 100%;
+}
+.details_row {
+  display: flex;
+  //justify-content: space-between;
+}
+
+.poster {
+  width: 30rem;
+  height: 30rem;
+  object-fit: fill;
+  margin-right: 4rem;
+}

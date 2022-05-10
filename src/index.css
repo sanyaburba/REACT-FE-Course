@@ -5,19 +5,10 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: #232323;
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-#AddModal {
-    display: none;
-}
-#DeleteModal {
-    display: none;
-}
-#EditModal {
-    display: block;
 }

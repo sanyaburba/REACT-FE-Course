@@ -1,0 +1,42 @@
+.errorbg {
+  background: #232323;
+  height: 120vh;
+
+}
+.errorImage {
+  height: 15rem;
+  margin: 5rem 0;
+}
+.errorText {
+  color: white;
+  font-size: 3rem;
+  font-weight: 300;
+}
+.errorMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.button {
+  height: 3.5rem;
+  display: flex;
+  width: 20%;
+  align-items: center;
+  justify-content: center;
+  color: #F65261;
+  border: 1px solid #F65261;
+  background: inherit;
+  border-radius: 3px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-right: 1rem;
+  margin: 2rem 0;
+}
+.errorHeader {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 3rem;
+}

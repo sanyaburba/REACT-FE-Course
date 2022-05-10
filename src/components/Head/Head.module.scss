@@ -39,7 +39,19 @@ img {
   align-self: flex-start;
   font-weight: 300;
   margin-bottom: 3rem;
+  letter-spacing: .5rem;
+}
 
+.btn_red {
+  display: flex;
+  width: 20%;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: #F65261;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 .finder_row {
@@ -52,7 +64,7 @@ img {
      margin-right: 20px;
      border-radius: 3px;
      background: rgba(50, 50, 50, 0.5);
-     color: #555555;
+     color: #fff;
      font-size: 1.7rem;
      padding: 1.3rem;
   }
