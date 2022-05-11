@@ -7,7 +7,9 @@ import logo from '../../images/lg.png'
 
 const ErrorPage = () => {
     return (
-        <div className={styles.errorbg}>
+        <div
+            data-testid='errorPage'
+            className={styles.errorbg}>
             <header className={styles.errorHeader}>
                 <img
                     src={logo}

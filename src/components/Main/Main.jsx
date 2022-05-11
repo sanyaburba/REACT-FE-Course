@@ -40,7 +40,7 @@ const Main = ({setPage, headRef, setMovieId, search, page, setSearch, movieId, s
     console.log(search)
 
     return (
-        <div>
+        <div data-testid="main-page">
             {page === 'HEAD' && <Head setSearch={setSearch} search={search} setSuccessActive={setSuccessActive}/>}
             {page === 'DETAILS' && <MovieDetails movieId={movieId} headRef={headRef} setPage={setPage}/>}
             <main className={styles.content}>

@@ -22,10 +22,13 @@ const Head = ({setSuccessActive, search, setSearch}) => {
     })
 
     return (
-        <header className={styles.header}>
+        <header
+            data-testid='head-page'
+            className={styles.header}>
             <div className={styles.content}>
                 <div className={styles.row}>
                     <Link
+                        data-testid='search-click'
                         to={'/'}
                         className="header__logo"
                     >

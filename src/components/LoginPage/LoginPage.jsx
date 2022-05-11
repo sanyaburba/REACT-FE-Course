@@ -24,8 +24,10 @@ const LoginPage = () => {
     }, [setIsAuth])
 
     return (
-        <div className={styles.backImage}>
-
+        <div
+            className={styles.backImage}
+            data-testid='loginPage'
+        >
             <div className={styles.background}>
                 <div className={styles.content}>
                     <h1 className={styles.heading}>
