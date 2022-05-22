@@ -50,6 +50,7 @@ const AddModal = ({active, setActive, setSuccessActive}) => {
         <div
             className={active ? styles.modal : styles.hideModal}
             onClick={closeModal}
+            data-testid='addModal'
         >
             <div
                 className={styles.modalContent}

@@ -26,7 +26,7 @@ const MyPasswordInput = ({title, type, placeholder, value, onBlur, onChange, tou
                     className={touched && errors ? styles.errorInput : styles.input}
                     placeholder={placeholder}
                 />
-                <IconButton onClick={handleShowPassword} className={styles.showButton}>
+                <IconButton onClick={handleShowPassword} className={styles.showButton} data-testid='showPassword'>
                     {showPassword===false ?
                         <VisibilityOff id={styles.visibility}/>
                         :

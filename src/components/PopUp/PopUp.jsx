@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from 'react';
 
-import styles from "./Moviecard.module.scss";
+import styles from './PopUp.module.scss'
 import DeleteModal from "../Modals/DeleteModal";
 import EditModal from "../Modals/EditModal";
 
@@ -18,6 +18,7 @@ const PopUp = ({close, movie, handleRemove, active}) => {
         <div
             className={active ? styles.popUp : styles.hidePopUp}
             onClick={close}
+            data-testid='popUp'
         >
             <div
                 className={styles.modalContent}
@@ -33,12 +34,14 @@ const PopUp = ({close, movie, handleRemove, active}) => {
                     <button
                         className={styles.popUpButton}
                         onClick={editMovieButtonClick}
+                        data-testid='editButton'
                     >
                         Edit
                     </button>
                     <button
                         className={styles.popUpButton}
                         onClick={deleteMovieButtonClick}
+                        data-testid='deleteButton'
                     >
                         Delete
                     </button>

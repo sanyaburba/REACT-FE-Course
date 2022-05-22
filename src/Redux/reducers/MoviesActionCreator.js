@@ -16,14 +16,3 @@ export const fetchMovies = createAsyncThunk(
 
     }
 )
-
-// export const fetchSingleMovie = createAsyncThunk(
-//     'movies/fetchSingle',
-//     async(_, thunkAPI) => {
-//         try {
-//             const response = await
-//         } catch (e) {
-//             return thunkAPI.rejectWithValue('not found')
-//         }
-//     }
-// )

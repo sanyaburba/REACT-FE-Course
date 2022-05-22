@@ -1,14 +1,12 @@
 import {render, screen} from '@testing-library/react';
 import ErrorPage from './ErrorPage'
-import {MemoryRouter} from "react-router-dom";
+import {renderWithRouterAndContext} from "../Helpers/renderWithRouterAndContext";
 
 describe('ERROR PAGE Tests', () => {
     test('renders element in the app', () => {
-        render(
-            <MemoryRouter initialEntries={['/asfa']}>
-                <ErrorPage/>
-            </MemoryRouter>
-        );
+        render(renderWithRouterAndContext(<ErrorPage/>, '/asfg'));
+
         expect(screen.getByTestId('errorPage')).toBeInTheDocument()
+        expect(screen.getByText(/page not found/i)).toBeInTheDocument()
     })
 })

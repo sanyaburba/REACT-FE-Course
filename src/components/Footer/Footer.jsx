@@ -4,14 +4,16 @@ import styles from './Footer.module.scss'
 
 const Footer = () => {
     return (
-        <footer className={styles.footer}>
+        <footer
+            className={styles.footer}
+            data-testid='footer'>
             <img
                 className={styles.img}
                 src={movieLogo}
-                alt=""
+                alt="footerImg"
             />
         </footer>
-        );
+    );
 };
 
 export default Footer;

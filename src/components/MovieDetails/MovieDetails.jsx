@@ -1,7 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import styles from "./MovieDetails.module.scss";
 import logo from "../../images/lg.png";
-import MyButton from "../UI/MyButton/MyButton";
 import SearchIcon from '@mui/icons-material/Search';
 import {IconButton} from "@mui/material";
 import {moviesAPI} from "../../services/MoviesService";
@@ -39,6 +38,7 @@ const MovieDetails = ({setPage, headRef, movieId}) => {
                     <IconButton
                         onClick={onSearchButtonClick}
                         style={{transform: 'scaleX(-1)'}}
+                        data-testid='searchButton'
                     >
                         <SearchIcon style={{color: '#F65261', fontSize: '2rem'}}/>
                     </IconButton>

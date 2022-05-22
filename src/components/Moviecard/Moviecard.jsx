@@ -3,7 +3,7 @@ import {MoreVert} from "@mui/icons-material";
 import styles from './Moviecard.module.scss'
 
 import noPhoto from '../../images/noPhoto.png'
-import PopUp from "./PopUp";
+import PopUp from "../PopUp/PopUp";
 
 const Moviecard = ({movie, setPage, headRef, handleRemove, setMovieId}) => {
 
@@ -35,6 +35,7 @@ const Moviecard = ({movie, setPage, headRef, handleRemove, setMovieId}) => {
     return (
         <div
             className={styles.movie_card}
+            data-testid='movieCard'
         >
             <div className={styles.relative_block}
             >
@@ -65,6 +66,7 @@ const Moviecard = ({movie, setPage, headRef, handleRemove, setMovieId}) => {
             <div className={styles.movie_row}>
                 <h2 className={styles.movie_title}
                     onClick={openMovieButtonClick}
+                    data-testid='title'
                 >
                     {movie?.title}
                 </h2>

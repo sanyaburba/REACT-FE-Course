@@ -1,12 +1,13 @@
 import React from 'react';
-import styles from '../SortingMovies/SortingResult.module.scss'
+import styles from './ResultFilter.module.scss'
 import '../../index.css'
 
 
 const ResultFilter = ({setFilter}) => {
 
     return (
-        <div className={styles.movie_types}>
+        <div className={styles.movie_types}
+            data-testid='ResultFilter'>
             <ul>
                 <li onClick={() => setFilter('')}>all</li>
                 <li onClick={() => setFilter('drama')}>drama</li>

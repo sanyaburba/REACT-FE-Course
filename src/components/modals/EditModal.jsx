@@ -51,6 +51,7 @@ const EditModal = ({active, setActive, movie}) => {
         <div
             className={active ? styles.modal : styles.hideModal}
             onClick={closeModal}
+            data-testid='editModal'
         >
             <div
                 className={styles.modalContent}

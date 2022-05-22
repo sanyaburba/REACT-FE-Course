@@ -1,8 +1,6 @@
 import React, {useCallback} from 'react';
 import styles from './Modals.module.scss'
 
-import MyButton from "../UI/MyButton/MyButton";
-
 const DeleteModal = ({active, setActive, movie, handleRemove}) => {
 
     const closeModal = useCallback((e) => {
@@ -20,6 +18,7 @@ const DeleteModal = ({active, setActive, movie, handleRemove}) => {
         <div
             className={active ? styles.modal : styles.hideModal}
             onClick={closeModal}
+            data-testid='deleteModal'
         >
             <div
                 className={styles.modalContent}

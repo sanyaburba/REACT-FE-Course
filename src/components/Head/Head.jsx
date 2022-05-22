@@ -37,12 +37,14 @@ const Head = ({setSuccessActive, search, setSearch}) => {
                     <button
                         className={styles.btn_black}
                         onClick={addMovieButtonClick}
+                        data-testid='addButton'
                     >
                         +add movie
                     </button>
                     <button
                         className={styles.btn_black}
                         onClick={logout}
+                        data-testid='quitButton'
                     >
                         quit
                     </button>

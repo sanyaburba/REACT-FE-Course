@@ -77,6 +77,7 @@ const LoginPage = () => {
                                     <button
                                         type="submit"
                                         disabled={!isValid && !dirty}
+                                        data-testid='logInButton'
                                         className={styles.button}>
                                         Log in
                                     </button>
