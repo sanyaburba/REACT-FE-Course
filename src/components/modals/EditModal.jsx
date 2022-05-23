@@ -1,6 +1,5 @@
 import React, {useCallback, useState} from 'react';
 import {Form, Formik} from 'formik'
-import * as Yup from "yup";
 
 import styles from './Modals.module.scss'
 import MyInput from "../UI/MyInput/MyInput";

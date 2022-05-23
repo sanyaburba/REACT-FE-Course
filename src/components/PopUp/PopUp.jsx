@@ -27,6 +27,7 @@ const PopUp = ({close, movie, handleRemove, active}) => {
                 <span
                     className={styles.close}
                     onClick={close}
+                    data-testid='closeButton'
                 >
                     &times;
                 </span>

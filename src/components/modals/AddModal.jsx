@@ -149,13 +149,16 @@ const AddModal = ({active, setActive, setSuccessActive}) => {
                                     <button
                                         value='confirm'
                                         type='reset'
+                                        data-testid='resetButton'
                                         className={styles.button2}>
                                         Reset
                                     </button>
                                     <button
                                         type="submit"
                                         disabled={!isValid && !dirty}
-                                        className={styles.button}>
+                                        className={styles.button}
+                                        data-testid='submitButton'
+                                    >
                                         Submit
                                     </button>
                                 </div>

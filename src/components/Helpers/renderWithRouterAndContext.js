@@ -1,12 +1,12 @@
 import {MemoryRouter} from "react-router-dom";
-import AppRouter from "../Router/AppRouter";
 import {AuthContext} from "../../Context";
 import {setupStore} from "../../Redux/store";
 import {Provider} from "react-redux";
+import {render} from "@testing-library/react";
 
 export const renderWithRouterAndContext = (component, initialRoute ='/') => {
     const store = setupStore()
-    return (
+    return render(
         <Provider store={store}>
         <MemoryRouter initialEntries={[initialRoute]}>
             <AuthContext.Provider value={{

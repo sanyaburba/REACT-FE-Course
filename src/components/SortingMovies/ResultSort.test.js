@@ -4,17 +4,13 @@ import userEvent from "@testing-library/user-event";
 
 describe('Sorting tests', () => {
     test('renders select in the app', () => {
-        render(
-            <ResultSort/>
-        )
+        render(<ResultSort/>)
         expect(screen.getByTestId('ResultSort')).toBeInTheDocument()
         expect(screen.getByText(/sort by/i)).toBeInTheDocument()
     })
     test('click on options and change values', () => {
-        render(
-            <ResultSort setSort={() => {
-            }}/>
-        )
+        render(<ResultSort setSort={() => {
+        }}/>)
         userEvent.selectOptions(screen.getByRole('combobox'), "all")
         expect(screen.getByText(/all/i).selected).toBeTruthy();
 
@@ -26,6 +22,5 @@ describe('Sorting tests', () => {
         expect(screen.getByText(/newest/i).selected).toBeTruthy();
         expect(screen.queryByText(/z-a/i).selected).toBeFalsy();
         expect(screen.queryByText(/all/i).selected).toBeFalsy();
-
     })
 })

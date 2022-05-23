@@ -14,14 +14,15 @@ const MovieDetails = ({setPage, headRef, movieId}) => {
     const onSearchButtonClick = () => setPage('HEAD')
     const [isError, setIsError] = useState(false);
 
-    console.log(isError)
-    console.log(movie)
 
-    const onError = useCallback(() => {
-        setIsError(true)
-    },[setIsError]);
+    const onError = useCallback(() => {setIsError(true)},[setIsError]);
+
     return (
-        <header ref={headRef} className={styles.header}>
+        <header
+            ref={headRef}
+            className={styles.header}
+            data-testid='MovieDetails'
+        >
             {isLoading && <h1>Loading movie...</h1>}
             {error && <h1>{error}</h1>}
             <div className={styles.content}>
@@ -56,7 +57,9 @@ const MovieDetails = ({setPage, headRef, movieId}) => {
                     />}
                     <div className={styles.details}>
                         <div className={styles.title_row}>
-                            <h1 className={styles.title}>
+                            <h1 className={styles.title}
+                                data-testid='MovieTitle'
+                            >
                                 {movie?.title}
                             </h1>
                             <div className={styles.rating_border}>

@@ -11,12 +11,12 @@ import {AuthContext} from "../../Context";
 
 describe('Head tests', () => {
     test('renders head in the app', () => {
-        render(renderWithRouterAndContext(<Head/>));
+       renderWithRouterAndContext(<Head/>);
 
         expect(screen.getByTestId('head-page')).toBeInTheDocument()
     })
     test('render modal after click', () => {
-        render(renderWithRouterAndContext(<Head/>));
+        renderWithRouterAndContext(<Head/>);
 
         const addMovieButton = screen.getByTestId('addButton')
         userEvent.click(addMovieButton)

@@ -27,6 +27,7 @@ const DeleteModal = ({active, setActive, movie, handleRemove}) => {
                 <span
                     className={styles.close}
                     onClick={closeModal}
+                    data-testid='closeButton'
                 >
                     &times;
                 </span>
@@ -38,6 +39,7 @@ const DeleteModal = ({active, setActive, movie, handleRemove}) => {
                         <button
                             className={styles.button}
                             onClick={deleteMovie}
+                            data-testid='confirmButton'
                         >
                             confirm
                         </button>
