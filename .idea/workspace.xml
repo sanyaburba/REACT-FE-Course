@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed31aceb-fae2-42fa-af04-3a8efc8af3ff" name="Changes" comment="" />
+    <list default="true" id="ed31aceb-fae2-42fa-af04-3a8efc8af3ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FilteringMovies/ResultFilter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilteringMovies/ResultFilter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FilteringMovies/ResultFilter.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilteringMovies/ResultFilter.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginPage/LoginPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginPage/LoginPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/Main.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieDetails/MovieDetails.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MovieDetails/MovieDetails.module.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +31,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/Users/aleksandrovila/Desktop/REACT-FE-Course",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
     "vue.rearranger.settings.migration": "true"
   }
@@ -37,6 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651586843466</updated>
       <workItem from="1651586844776" duration="28000" />
+      <workItem from="1653659089285" duration="461000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,5 @@
 import React from 'react';
 import styles from './ResultFilter.module.scss'
-import '../../index.css'
-
 
 const ResultFilter = ({setFilter}) => {
 

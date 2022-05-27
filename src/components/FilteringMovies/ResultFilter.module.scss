@@ -14,3 +14,15 @@
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  .movie_types {
+    & ul {
+      flex-direction: column;
+      & li {
+        margin-left: 0;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

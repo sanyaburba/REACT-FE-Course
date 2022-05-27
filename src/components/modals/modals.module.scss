@@ -53,6 +53,13 @@
   animation-name: animatetop;
   animation-duration: 0.4s
 }
+
+@media screen and (max-width: 900px) {
+  .modalContent{
+    width: 100%;
+
+  }
+}
 .addContent {
   text-align: center;
 }

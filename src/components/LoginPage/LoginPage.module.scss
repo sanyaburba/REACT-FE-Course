@@ -151,3 +151,9 @@
   background: url('../../images/bg.jpeg') no-repeat center;
   height: 150vh;
 }
+
+@media screen and (max-width: 900px) {
+    .content {
+      width: 100%;
+    }
+}
