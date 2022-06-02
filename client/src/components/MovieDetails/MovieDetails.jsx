@@ -1,21 +1,21 @@
-import React, {useCallback, useState} from 'react';
+import React, { useCallback, useState } from 'react';
 import styles from "./MovieDetails.module.scss";
-import logo from "../../images/lg.png";
+import logo from 'assets/images/lg.png'
+import noPhoto from 'assets/images/noPhoto.png'
 import SearchIcon from '@mui/icons-material/Search';
-import {IconButton} from "@mui/material";
-import {moviesAPI} from "../../services/MoviesService";
-import noPhoto from '../../images/noPhoto.png'
-import {Link} from "react-router-dom";
+import { IconButton } from "@mui/material";
+import { moviesAPI } from "../../services/MoviesService";
+import { Link } from "react-router-dom";
 
-const MovieDetails = ({setPage, headRef, movieId}) => {
+export const MovieDetails = ({ setPage, headRef, movieId }) => {
 
 
-    const {data: movie, error, isLoading} = moviesAPI.useGetMovieQuery(movieId)
+    const { data: movie, error, isLoading } = moviesAPI.useGetMovieQuery(movieId)
     const onSearchButtonClick = () => setPage('HEAD')
     const [isError, setIsError] = useState(false);
 
 
-    const onError = useCallback(() => {setIsError(true)},[setIsError]);
+    const onError = useCallback(() => { setIsError(true) }, [setIsError]);
 
     return (
         <header
@@ -38,10 +38,10 @@ const MovieDetails = ({setPage, headRef, movieId}) => {
                     </Link>
                     <IconButton
                         onClick={onSearchButtonClick}
-                        style={{transform: 'scaleX(-1)'}}
+                        style={{ transform: 'scaleX(-1)' }}
                         data-testid='searchButton'
                     >
-                        <SearchIcon style={{color: '#F65261', fontSize: '2rem'}}/>
+                        <SearchIcon style={{ color: '#F65261', fontSize: '2rem' }} />
                     </IconButton>
                 </div>
                 <div className={styles.details_row}>
@@ -50,7 +50,7 @@ const MovieDetails = ({setPage, headRef, movieId}) => {
                         alt={movie?.title}
                         className={styles.poster}
                         onError={error && onError}
-                    />: <img
+                    /> : <img
                         src={noPhoto}
                         alt={movie?.title}
                         className={styles.poster}
@@ -90,4 +90,3 @@ const MovieDetails = ({setPage, headRef, movieId}) => {
     );
 };
 
-export default MovieDetails;

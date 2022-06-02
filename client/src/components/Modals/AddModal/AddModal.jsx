@@ -1,19 +1,19 @@
-import React, {useCallback, useState} from 'react';
-import {Form, Formik} from 'formik';
-import {movies} from "../Helpers/data";
-import styles from './Modals.module.scss'
-import {moviesAPI} from "../../services/MoviesService";
-
-import MyInput from "../UI/MyInput/MyInput";
-import MySelect from "../UI/MySelect/MySelect";
-import {validationSchema} from "../Helpers/validationSchema";
+import React, { useCallback, useState } from 'react';
+import { Form, Formik } from 'formik';
+import { movies } from 'utils/data';
+import styles from '../Modals.module.scss'
+import { moviesAPI } from "../../../services/MoviesService";
 
 
-const AddModal = ({active, setActive, setSuccessActive}) => {
+import { MyInput, MySelect } from 'components';
+import { validationSchema } from 'utils/validationSchema';
+
+
+export const AddModal = ({ active, setActive, setSuccessActive }) => {
 
     const [selected, setSelected] = useState([])
 
-    const toggleOption = ({id}) => {
+    const toggleOption = ({ id }) => {
         setSelected(prevSelected => {
             // if it's in, remove
             const newArray = [...prevSelected]
@@ -29,7 +29,7 @@ const AddModal = ({active, setActive, setSuccessActive}) => {
     const closeModal = useCallback(() => setActive(false), [setActive]);
     const notCloseOnContent = useCallback((e) => e.stopPropagation(), []);
 
-    const [createMovie, {}] = moviesAPI.useCreateMovieMutation();
+    const [createMovie, { }] = moviesAPI.useCreateMovieMutation();
 
 
     const onFormSubmit = useCallback(async (values, resetForm) => {
@@ -78,10 +78,10 @@ const AddModal = ({active, setActive, setSuccessActive}) => {
                         }}
                         validateOnBlur
                         validationSchema={validationSchema}
-                        onSubmit={(values, {resetForm}) => onFormSubmit(values, resetForm)}
+                        onSubmit={(values, { resetForm }) => onFormSubmit(values, resetForm)}
                         validator={() => ({})}
                     >
-                        {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) => (
+                        {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
                             <Form onSubmit={handleSubmit}>
                                 <MyInput
                                     title="title"
@@ -171,4 +171,3 @@ const AddModal = ({active, setActive, setSuccessActive}) => {
     );
 };
 
-export default AddModal;

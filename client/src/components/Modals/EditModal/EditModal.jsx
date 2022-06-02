@@ -1,18 +1,17 @@
-import React, {useCallback, useState} from 'react';
-import {Form, Formik} from 'formik'
+import React, { useCallback, useState } from 'react';
+import { Form, Formik } from 'formik'
 
-import styles from './Modals.module.scss'
-import MyInput from "../UI/MyInput/MyInput";
-import {movies} from "../Helpers/data";
-import MySelect from "../UI/MySelect/MySelect";
-import {moviesAPI} from "../../services/MoviesService";
-import {validationSchema} from "../Helpers/validationSchema";
+import styles from '../Modals.module.scss'
+import { MySelect, MyInput } from 'components';
+import { movies } from 'utils/data';
+import { validationSchema } from 'utils/validationSchema';
+import { moviesAPI } from "../../../services/MoviesService";
 
 
-const EditModal = ({active, setActive, movie}) => {
+export const EditModal = ({ active, setActive, movie }) => {
 
     const [selected, setSelected] = useState([])
-    const [updateMovie, {}] = moviesAPI.useUpdateMovieMutation()
+    const [updateMovie, { }] = moviesAPI.useUpdateMovieMutation()
 
     const closeModal = useCallback((e) => {
         setActive(false)
@@ -21,7 +20,7 @@ const EditModal = ({active, setActive, movie}) => {
     const notCloseOnContent = useCallback((e) => e.stopPropagation(), []);
 
 
-    const toggleOption = ({id}) => {
+    const toggleOption = ({ id }) => {
         setSelected(prevSelected => {
             // if it's in, remove
             const newArray = [...prevSelected]
@@ -82,15 +81,15 @@ const EditModal = ({active, setActive, movie}) => {
                         validator={() => ({})}
                     >
                         {({
-                              values,
-                              errors,
-                              touched,
-                              handleBlur,
-                              isValid,
-                              handleSubmit,
-                              dirty,
-                              setFieldValue
-                          }) => (
+                            values,
+                            errors,
+                            touched,
+                            handleBlur,
+                            isValid,
+                            handleSubmit,
+                            dirty,
+                            setFieldValue
+                        }) => (
                             <Form onSubmit={handleSubmit}>
                                 <h2 className={styles.titleHeading}>Movie Id</h2>
                                 <p className={styles.movieId}>{movie?.id}</p>
@@ -191,4 +190,3 @@ const EditModal = ({active, setActive, movie}) => {
         ;
 };
 
-export default EditModal;

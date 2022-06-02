@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ResultFilter.module.scss'
 
-const ResultFilter = ({setFilter}) => {
+export const ResultFilter = ({ setFilter }) => {
 
     return (
         <div className={styles.movie_types}
@@ -18,4 +18,3 @@ const ResultFilter = ({setFilter}) => {
     );
 };
 
-export default ResultFilter;

@@ -2,7 +2,7 @@ import React, {useCallback, useState} from 'react';
 import styles from './MySelect.module.scss'
 import {ArrowDropDown} from "@mui/icons-material";
 
-const MySelect = ({options, selected, toggleOption, values}) => {
+export const MySelect = ({options, selected, toggleOption, values}) => {
 
     const [openedList, setOpenedList] = useState(false);
 
@@ -52,4 +52,3 @@ const MySelect = ({options, selected, toggleOption, values}) => {
     );
 };
 
-export default MySelect;

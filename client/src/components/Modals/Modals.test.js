@@ -1,8 +1,7 @@
 import {renderWithRouterAndContext} from "../Helpers/renderWithRouterAndContext";
-import AddModal from "./AddModal";
+import { DeleteModal, AddModal } from "components";
 import {screen} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import DeleteModal from "./DeleteModal";
 
 
 describe('Add Modal tests', () => {

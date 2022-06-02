@@ -1,14 +1,13 @@
-import React, {useCallback, useContext} from 'react';
+import React, { useCallback, useContext } from 'react';
 import styles from './LoginPage.module.scss'
 import * as Yup from "yup";
-import {Form, Formik} from "formik";
-import MyInput from "../UI/MyInput/MyInput";
-import {AuthContext} from "../../Context";
-import MyPasswordInput from "../UI/MyInput/MyPasswordInput";
+import { Form, Formik } from "formik";
+import { MyInput, MyPasswordInput } from 'components';
+import { AuthContext } from 'context';
 
-const LoginPage = () => {
+export const LoginPage = () => {
 
-    const {isAuth, setIsAuth} = useContext(AuthContext);
+    const { isAuth, setIsAuth } = useContext(AuthContext);
 
     const validationSchema = Yup.object().shape({
         userId: Yup.string().typeError('value should be a string').required('This field is required'),
@@ -19,7 +18,7 @@ const LoginPage = () => {
     })
 
     const onFormSubmit = useCallback(async () => {
-       await setIsAuth(true)
+        await setIsAuth(true)
         localStorage.setItem('auth', 'true')
     }, [setIsAuth])
 
@@ -40,10 +39,10 @@ const LoginPage = () => {
                         }}
                         validateOnBlur
                         validationSchema={validationSchema}
-                        onSubmit={(values)=>onFormSubmit(values)}
+                        onSubmit={(values) => onFormSubmit(values)}
                         validator={() => ({})}
                     >
-                        {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) => (
+                        {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
                             <Form onSubmit={handleSubmit}>
                                 <MyInput
                                     title="user id*"
@@ -91,4 +90,3 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;

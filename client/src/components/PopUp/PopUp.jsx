@@ -1,10 +1,9 @@
-import React, {useCallback, useState} from 'react';
+import React, { useCallback, useState } from 'react';
 
 import styles from './PopUp.module.scss'
-import DeleteModal from "../Modals/DeleteModal";
-import EditModal from "../Modals/EditModal";
+import { DeleteModal, EditModal } from 'components';
 
-const PopUp = ({close, movie, handleRemove, active}) => {
+export const PopUp = ({ close, movie, handleRemove, active }) => {
 
     const [deleteModalActive, setDeleteModalActive] = useState(false);
     const [editModalActive, setEditModalActive] = useState(false);
@@ -51,7 +50,7 @@ const PopUp = ({close, movie, handleRemove, active}) => {
                     movie={movie}
                     handleRemove={handleRemove}
                     active={deleteModalActive}
-                    setActive={setDeleteModalActive}/>
+                    setActive={setDeleteModalActive} />
                 <EditModal
                     movie={movie}
                     active={editModalActive}
@@ -62,4 +61,3 @@ const PopUp = ({close, movie, handleRemove, active}) => {
     );
 };
 
-export default PopUp;

@@ -1,8 +1,8 @@
-import React, {useCallback} from 'react';
-import styles from './Modals.module.scss'
-import {Check} from "@mui/icons-material";
+import React, { useCallback } from 'react';
+import styles from '../Modals.module.scss'
+import { Check } from "@mui/icons-material";
 
-const SuccessAddModal = ({active, setActive}) => {
+export const SuccessAddModal = ({ active, setActive }) => {
 
     const closeModal = useCallback(() => setActive(false), [setActive]);
 
@@ -23,7 +23,7 @@ const SuccessAddModal = ({active, setActive}) => {
                 <div className={styles.addContent}>
                     <div className={styles.modalBody}>
                         <div className={styles.checkIcon}>
-                            <Check style={{fontSize: '4rem', color: 'white'}}/>
+                            <Check style={{ fontSize: '4rem', color: 'white' }} />
                         </div>
                         <h1 className={styles.heading}>congratulations !</h1>
                         <div className={styles.addRow}>
@@ -42,4 +42,3 @@ const SuccessAddModal = ({active, setActive}) => {
     );
 };
 
-export default SuccessAddModal;

@@ -1,9 +1,9 @@
-import React, {useCallback, useState} from 'react';
-import styles from './MyInput.module.scss'
-import {IconButton} from "@mui/material";
-import {Visibility, VisibilityOff} from "@mui/icons-material";
+import React, { useCallback, useState } from 'react';
+import styles from '../MyInput.module.scss'
+import { IconButton } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
-const MyPasswordInput = ({title, type, placeholder, value, onBlur, onChange, touched, errors, name}) => {
+export const MyPasswordInput = ({ title, type, placeholder, value, onBlur, onChange, touched, errors, name }) => {
 
     const [showPassword, setShowPassword] = useState(false)
 
@@ -27,10 +27,10 @@ const MyPasswordInput = ({title, type, placeholder, value, onBlur, onChange, tou
                     placeholder={placeholder}
                 />
                 <IconButton onClick={handleShowPassword} className={styles.showButton} data-testid='showPassword'>
-                    {showPassword===false ?
-                        <VisibilityOff id={styles.visibility}/>
+                    {showPassword === false ?
+                        <VisibilityOff id={styles.visibility} />
                         :
-                        <Visibility id={styles.visibility}/>}
+                        <Visibility id={styles.visibility} />}
                 </IconButton>
             </div>
             {touched && errors && (
@@ -42,4 +42,3 @@ const MyPasswordInput = ({title, type, placeholder, value, onBlur, onChange, tou
     );
 };
 
-export default MyPasswordInput;

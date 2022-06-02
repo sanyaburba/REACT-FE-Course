@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './ResultSort.module.scss';
 
-const ResultSort = ({sort, setSort}) => {
+export const ResultSort = ({ sort, setSort }) => {
     return (
         <div className={styles.movie_sort}
-        data-testid='ResultSort'>
+            data-testid='ResultSort'>
             <h1>sort by</h1>
             <select value={sort} onChange={(e) => setSort(e.target.value)}>
                 <option value='all'>All</option>
@@ -16,4 +16,3 @@ const ResultSort = ({sort, setSort}) => {
     );
 };
 
-export default ResultSort;

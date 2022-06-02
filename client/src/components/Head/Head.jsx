@@ -1,12 +1,12 @@
-import React, {useCallback, useContext, useState} from 'react';
-import {Link} from "react-router-dom";
-import movie from '../../images/lg.png'
+import React, { useCallback, useContext, useState } from 'react';
+import { Link } from "react-router-dom";
+import movieLogo from 'assets/images/lg.png'
 import styles from './Head.module.scss'
 
-import AddModal from "../Modals/AddModal";
-import {AuthContext} from "../../Context";
+import { AddModal } from 'components';
+import { AuthContext } from 'context';
 
-const Head = ({setSuccessActive, search, setSearch}) => {
+export const Head = ({ setSuccessActive, search, setSearch }) => {
 
     const [modalActive, setModalActive] = useState(false);
     const [searchQuery, setSearchQuery] = useState(search);
@@ -14,10 +14,10 @@ const Head = ({setSuccessActive, search, setSearch}) => {
     const addMovieButtonClick = useCallback(() => setModalActive(true), []);
     const onSearchButtonClick = useCallback(() => setSearch(searchQuery), [searchQuery, setSearch])
 
-    const {isAuth, setIsAuth} = useContext(AuthContext);
+    const { isAuth, setIsAuth } = useContext(AuthContext);
 
 
-    const logout = useCallback(()=> {
+    const logout = useCallback(() => {
         setIsAuth(false)
     })
 
@@ -32,7 +32,7 @@ const Head = ({setSuccessActive, search, setSearch}) => {
                         to={'/'}
                         className="header__logo"
                     >
-                        <img src={movie} alt="logo"/>
+                        <img src={movieLogo} alt="logo" />
                     </Link>
                     <button
                         className={styles.btn_black}
@@ -73,4 +73,3 @@ const Head = ({setSuccessActive, search, setSearch}) => {
     );
 };
 
-export default Head;

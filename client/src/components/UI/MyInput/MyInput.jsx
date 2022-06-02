@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './MyInput.module.scss'
 
-const MyInput = ({title, type = 'text', placeholder, value, onBlur, onChange, touched, errors, name}) => {
+export const MyInput = ({ title, type = 'text', placeholder, value, onBlur, onChange, touched, errors, name }) => {
 
     return (
         <div className={styles.input_row}>
@@ -26,4 +26,3 @@ const MyInput = ({title, type = 'text', placeholder, value, onBlur, onChange, to
     );
 };
 
-export default MyInput;

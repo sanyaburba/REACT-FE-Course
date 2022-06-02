@@ -1,11 +1,7 @@
 import {useEffect, useRef, useState} from "react";
-import './App.css';
-import {AuthContext} from "./Context";
-
-import Footer from "./components/Footer/Footer";
-import ErrorBoundary from "./components/ErrorBoundary";
-import SuccessAdd from "./components/Modals/SuccessAddModal";
-import AppRouter from "./components/Router/AppRouter";
+import { AuthContext } from "context";
+import { Footer, ErrorBoundary, SuccessAddModal, AppRouter } from "components";
+import 'assets/styles/App.css'
 
 function App() {
 
@@ -40,7 +36,7 @@ function App() {
                                setMovieId={setMovieId}
                                headRef={headRef}
                     />
-                    <SuccessAdd
+                    <SuccessAddModal
                         active={successActive}
                         setActive={setSuccessActive}
                     />

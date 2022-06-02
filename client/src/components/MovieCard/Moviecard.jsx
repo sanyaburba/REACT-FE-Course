@@ -1,11 +1,11 @@
-import React, {useCallback, useState} from 'react';
-import {MoreVert} from "@mui/icons-material";
+import React, { useCallback, useState } from 'react';
+import { MoreVert } from "@mui/icons-material";
 import styles from './Moviecard.module.scss'
+import { PopUp } from 'components';
 
-import noPhoto from '../../images/noPhoto.png'
-import PopUp from "../PopUp/PopUp";
+import noPhoto from 'assets/images/noPhoto.png'
 
-const Moviecard = ({movie, setPage, headRef, handleRemove, setMovieId}) => {
+export const Moviecard = ({ movie, setPage, headRef, handleRemove, setMovieId }) => {
 
     const handleScroll = (ref) => {
         window.scrollTo({
@@ -59,7 +59,7 @@ const Moviecard = ({movie, setPage, headRef, handleRemove, setMovieId}) => {
                     className={styles.buttonHover}
                     onClick={openPopUp}
                 >
-                    <MoreVert id={styles.moreButton}/>
+                    <MoreVert id={styles.moreButton} />
                 </button>
 
             </div>
@@ -81,4 +81,3 @@ const Moviecard = ({movie, setPage, headRef, handleRemove, setMovieId}) => {
     );
 };
 
-export default Moviecard;

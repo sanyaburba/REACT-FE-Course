@@ -1,11 +1,10 @@
 import React from 'react';
 import styles from './ErrorPage.module.scss'
-import MyButton from "../UI/MyButton/MyButton";
-import error404 from '../../images/404.png'
-import {Link} from "react-router-dom";
-import logo from '../../images/lg.png'
+import error404 from 'assets/images/404.png'
+import logo from 'assets/images/lg.png'
+import { Link } from "react-router-dom";
 
-const ErrorPage = () => {
+export const ErrorPage = () => {
     return (
         <div
             data-testid='errorPage'
@@ -34,4 +33,3 @@ const ErrorPage = () => {
     );
 };
 
-export default ErrorPage;

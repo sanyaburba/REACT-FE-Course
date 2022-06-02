@@ -1,7 +1,7 @@
-import React, {useCallback} from 'react';
-import styles from './Modals.module.scss'
+import React, { useCallback } from 'react';
+import styles from '../Modals.module.scss'
 
-const DeleteModal = ({active, setActive, movie, handleRemove}) => {
+export const DeleteModal = ({ active, setActive, movie, handleRemove }) => {
 
     const closeModal = useCallback((e) => {
         setActive(false)
@@ -51,4 +51,3 @@ const DeleteModal = ({active, setActive, movie, handleRemove}) => {
     );
 };
 
-export default DeleteModal;
